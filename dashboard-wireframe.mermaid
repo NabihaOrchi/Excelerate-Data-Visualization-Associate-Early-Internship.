@@ -1,0 +1,47 @@
+graph TD
+    subgraph Header["Dashboard Header"]
+        Title["User Analytics Dashboard"]
+        DateFilter["Date Range Filter"]
+    end
+
+    subgraph TopRow["Key Metrics"]
+        KPI1["Total Users"]
+        KPI2["Active Users"]
+        KPI3["Engagement Rate"]
+        KPI4["Retention Rate"]
+    end
+
+    subgraph MiddleRow["Main Visualizations"]
+        direction LR
+        Chart1["User Growth Trend<br/>Line Chart"]
+        Chart2["User Demographics<br/>Pie Chart"]
+        Chart3["Activity Heatmap<br/>Calendar View"]
+    end
+
+    subgraph BottomRow["Detailed Analysis"]
+        Table1["User Activity Table<br/>Sortable & Filterable"]
+        Chart4["Comparative Analysis<br/>Bar Chart"]
+    end
+
+    Header --> TopRow
+    TopRow --> MiddleRow
+    MiddleRow --> BottomRow
+
+    style Header fill:#f9f9f9,stroke:#666
+    style TopRow fill:#e6f3ff,stroke:#666
+    style MiddleRow fill:#e6f3ff,stroke:#666
+    style BottomRow fill:#e6f3ff,stroke:#666
+    
+    style Title fill:#fff,stroke:#333,stroke-width:2px
+    style DateFilter fill:#fff,stroke:#333
+    
+    style KPI1 fill:#fff,stroke:#333
+    style KPI2 fill:#fff,stroke:#333
+    style KPI3 fill:#fff,stroke:#333
+    style KPI4 fill:#fff,stroke:#333
+    
+    style Chart1 fill:#fff,stroke:#333
+    style Chart2 fill:#fff,stroke:#333
+    style Chart3 fill:#fff,stroke:#333
+    style Chart4 fill:#fff,stroke:#333
+    style Table1 fill:#fff,stroke:#333

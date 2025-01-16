@@ -1,0 +1,65 @@
+graph TD
+    subgraph Header["Dashboard Header"]
+        Title["User & Opportunity Analytics Dashboard"]
+        direction LR
+        DateFilter["Date Range Selector"]
+        DataQuality["Data Quality Indicator"]
+        Filters["Advanced Filters<br/>Country | Gender | Category"]
+    end
+
+    subgraph TopRow["Key Performance Indicators"]
+        direction LR
+        KPI1["Total Users<br/>27,562"]
+        KPI2["Total Opportunities<br/>20,321"]
+        KPI3["Engagement Rate<br/>With Outlier Detection"]
+        KPI4["Completion Rate<br/>Normalized"]
+    end
+
+    subgraph MiddleRowLeft["User Analysis"]
+        direction TB
+        Demographics["Demographics Distribution<br/>- Gender<br/>- Country<br/>- Degree<br/>Box Plot for Outliers"]
+        SocialMedia["Social Media Impact<br/>Normalized Metrics"]
+        UserTrend["User Sign-up Trends<br/>Time Series Analysis"]
+    end
+
+    subgraph MiddleRowRight["Opportunity Metrics"]
+        direction TB
+        OppCategories["Category Distribution<br/>Preprocessed Data"]
+        RewardAnalysis["Reward Analysis<br/>- Amount Distribution<br/>- Outlier Detection"]
+        SkillPoints["Skill Points Distribution<br/>Normalized Scale"]
+    end
+
+    subgraph BottomRow["Detailed Analysis"]
+        direction LR
+        CompletionMatrix["Opportunity Completion Matrix<br/>Heatmap with Preprocessed Data"]
+        UserBehavior["User Behavior Patterns<br/>Feature Engineered Metrics"]
+        GeographicInsights["Geographic Distribution<br/>Cleaned & Normalized Data"]
+    end
+
+    subgraph DataTables["Interactive Data Tables"]
+        UserTable["User Details<br/>Filtered & Transformed"]
+        OppTable["Opportunity Details<br/>Preprocessed View"]
+    end
+
+    Header --> TopRow
+    TopRow --> MiddleRowLeft
+    TopRow --> MiddleRowRight
+    MiddleRowLeft --> BottomRow
+    MiddleRowRight --> BottomRow
+    BottomRow --> DataTables
+
+    style Header fill:#f0f0f0,stroke:#666
+    style TopRow fill:#e6f3ff,stroke:#666
+    style MiddleRowLeft fill:#e6ffe6,stroke:#666
+    style MiddleRowRight fill:#ffe6e6,stroke:#666
+    style BottomRow fill:#fff5e6,stroke:#666
+    style DataTables fill:#f9f9f9,stroke:#666
+
+    classDef kpi fill:#fff,stroke:#333,stroke-width:2px
+    class KPI1,KPI2,KPI3,KPI4 kpi
+
+    classDef chart fill:#fff,stroke:#333
+    class Demographics,SocialMedia,UserTrend,OppCategories,RewardAnalysis,SkillPoints,CompletionMatrix,UserBehavior,GeographicInsights chart
+
+    classDef table fill:#fff,stroke:#333
+    class UserTable,OppTable table
